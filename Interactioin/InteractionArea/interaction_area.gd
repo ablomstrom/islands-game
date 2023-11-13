@@ -9,8 +9,8 @@ var interact: Callable = func():
 	
 # Called when the node enters the scene tree for the first time.
 
+
 func _on_body_entered(_body):
-	print("Something eneted an area")
 	InteractionManager.register_area(self)
 
 

@@ -9,19 +9,15 @@ var active_areas = []
 var can_interact = true
 
 func register_area(area: InteractionArea):
-	print("registered an area")
 	active_areas.push_back(area)
 	
 func unregister_area(area: InteractionArea):
-	print("un-registered an area")
 	var index = active_areas.find(area)
 	if index != -1:
 		active_areas.remove_at(index)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("interacton manager is ready")
-	print(player)
 	pass # Replace with function body.
 
 
@@ -31,8 +27,8 @@ func _process(_delta):
 		active_areas.sort_custom(_sort_by_distance_to_player)
 		label.text = base_text + active_areas[0].action_name
 		label.global_position = active_areas[0].global_position
-		label.global_position.y += 36
-		label.global_position.x -= label.size.x / 2 
+		label.global_position.y -= 20
+		label.global_position.x -= label.size.x / 3
 		label.show()
 	else:
 		label.hide()
