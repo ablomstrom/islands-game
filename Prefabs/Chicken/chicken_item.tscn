@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqa2nfp4ipejm"]
+
+[ext_resource type="Texture2D" uid="uid://balsmcg6t45mj" path="res://Prefabs/Chicken/Chicken_Texture.tres" id="1_4gs7p"]
+
+[node name="Chicken_Item" type="Node2D"]
+position = Vector2(-5, -8)
+scale = Vector2(1.5, 1.5)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_4gs7p")

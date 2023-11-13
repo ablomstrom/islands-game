@@ -11,15 +11,14 @@ script/source = "extends CharacterBody2D
 
 func _physics_process(_delta):
 	# Add the gravity.
-	if !is_inside_boat: 
-		var input_direction = Vector2(
-			Input.get_action_raw_strength(\"right\") - Input.get_action_raw_strength(\"left\"),
-			Input.get_action_raw_strength(\"down\") - Input.get_action_raw_strength(\"up\")
-		)
+	var input_direction = Vector2(
+		Input.get_action_raw_strength(\"right\") - Input.get_action_raw_strength(\"left\"),
+		Input.get_action_raw_strength(\"down\") - Input.get_action_raw_strength(\"up\")
+	)
 
-		velocity = input_direction * SPEED
-		
-		move_and_slide()
+	velocity = input_direction * SPEED
+	
+	move_and_slide()
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbpcr"]
@@ -27,8 +26,8 @@ size = Vector2(12, 5)
 
 [node name="PlayerChar" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
-collision_layer = 2
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 script = SubResource("GDScript_fsiwf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

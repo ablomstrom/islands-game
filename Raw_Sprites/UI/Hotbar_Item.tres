@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cwc2fcgritpec"]
+
+[ext_resource type="Texture2D" uid="uid://bq8771xfpb62j" path="res://Raw_Sprites/UI/uipack_rpg_sheet.png" id="1_xph4x"]
+
+[resource]
+atlas = ExtResource("1_xph4x")
+region = Rect2(290, 49, 45, 45)
