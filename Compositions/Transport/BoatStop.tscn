@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu7yf8dishg0x"]
+
+[ext_resource type="Script" path="res://Compositions/Transport/BoatStop.gd" id="1_x788k"]
+
+[node name="BoatStop" type="Node2D"]
+script = ExtResource("1_x788k")
+
+[node name="UnMountArea" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="MountArea" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="PlayerUnmountLocation" type="Node2D" parent="."]
+
+[node name="Cooldown" type="Timer" parent="."]
+autostart = true
+
+[connection signal="body_entered" from="UnMountArea" to="." method="_on_un_mount_area_body_entered"]
+[connection signal="body_entered" from="MountArea" to="." method="_on_mount_area_body_entered"]
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

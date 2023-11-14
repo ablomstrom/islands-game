@@ -9,8 +9,9 @@ size = Vector2(15, 6)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w8v6g"]
 
-[node name="Boat" type="CharacterBody2D"]
+[node name="Boat" type="CharacterBody2D" groups=["boat"]]
 script = ExtResource("1_wsnik")
+SPEED = 150.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 3)

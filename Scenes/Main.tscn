@@ -1,8 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://cr71twoaaakm1"]
+[gd_scene load_steps=9 format=3 uid="uid://cr71twoaaakm1"]
 
 [ext_resource type="TileSet" uid="uid://b0ksjbl1gv0v6" path="res://Tiles/base_tiles.tres" id="1_lraci"]
 [ext_resource type="PackedScene" uid="uid://bk21w1q1t06jf" path="res://Characters/player_char.tscn" id="2_l4huy"]
-[ext_resource type="PackedScene" uid="uid://36kp8e42xwug" path="res://Prefabs/Boat.tscn" id="3_vfp3t"]
+[ext_resource type="PackedScene" uid="uid://bu7yf8dishg0x" path="res://Compositions/Transport/BoatStop.tscn" id="4_0ghse"]
+[ext_resource type="PackedScene" uid="uid://dno3x2jduqbk" path="res://Prefabs/BoatNew.tscn" id="5_3prvm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26v3i"]
+size = Vector2(29, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vev1o"]
+size = Vector2(28, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwi6g"]
+size = Vector2(26, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eam2g"]
+size = Vector2(33, 14)
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -75,11 +88,42 @@ layer_8/tile_data = PackedInt32Array(458752, 3473408, 12, 458753, 3473408, 13, 6
 
 [node name="PlayerChar" parent="." instance=ExtResource("2_l4huy")]
 z_index = 10
-position = Vector2(-844, 68)
+position = Vector2(102, 81)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerChar"]
 position = Vector2(-1, -1)
 zoom = Vector2(4, 4)
 
-[node name="Boat" parent="." instance=ExtResource("3_vfp3t")]
-position = Vector2(29, 108)
+[node name="BoatStop" parent="." instance=ExtResource("4_0ghse")]
+position = Vector2(-788, 124)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoatStop/UnMountArea" index="0"]
+position = Vector2(25, 1)
+shape = SubResource("RectangleShape2D_26v3i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoatStop/MountArea" index="0"]
+position = Vector2(-6, 1)
+shape = SubResource("RectangleShape2D_vev1o")
+
+[node name="PlayerUnmountLocation" parent="BoatStop" index="2"]
+position = Vector2(-5, 0)
+
+[node name="Boat2" parent="." instance=ExtResource("5_3prvm")]
+position = Vector2(23, 107)
+
+[node name="BoatStop2" parent="." instance=ExtResource("4_0ghse")]
+position = Vector2(21, 107)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoatStop2/UnMountArea" index="0"]
+position = Vector2(3, -0.5)
+shape = SubResource("RectangleShape2D_xwi6g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoatStop2/MountArea" index="0"]
+position = Vector2(5.5, 18)
+shape = SubResource("RectangleShape2D_eam2g")
+
+[node name="PlayerUnmountLocation" parent="BoatStop2" index="2"]
+position = Vector2(3, 17)
+
+[editable path="BoatStop"]
+[editable path="BoatStop2"]
