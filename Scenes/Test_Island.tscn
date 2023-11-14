@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://b0ksjbl1gv0v6" path="res://Tiles/base_tiles.tres" id="1_8knoy"]
 [ext_resource type="PackedScene" uid="uid://bk21w1q1t06jf" path="res://Characters/player_char.tscn" id="2_28gto"]
 [ext_resource type="Script" path="res://Scenes/Fireplace.gd" id="3_jo7q6"]
-[ext_resource type="PackedScene" path="res://Interactioin/InteractionArea/interaction_area.tscn" id="3_wlg35"]
+[ext_resource type="PackedScene" uid="uid://b3iggbqnm51rv" path="res://Interactioin/InteractionArea/interaction_area.tscn" id="3_wlg35"]
 [ext_resource type="Script" path="res://Scenes/Gnome.gd" id="5_2rmmo"]
 [ext_resource type="Script" path="res://Scenes/Tent.gd" id="6_g8foo"]
 [ext_resource type="Script" path="res://Scenes/Blommona.gd" id="7_0wrfr"]

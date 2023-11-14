@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://3vwn18xflgmf" path="res://Raw_Sprites/Tiles/roguelikeSheet_transparent.png" id="1_8alvs"]
 [ext_resource type="Script" path="res://Prefabs/Boat.gd" id="1_wsnik"]
-[ext_resource type="PackedScene" path="res://Interactioin/InteractionArea/interaction_area.tscn" id="3_i3asa"]
+[ext_resource type="PackedScene" uid="uid://b3iggbqnm51rv" path="res://Interactioin/InteractionArea/interaction_area.tscn" id="3_i3asa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wf3t4"]
 size = Vector2(15, 6)
