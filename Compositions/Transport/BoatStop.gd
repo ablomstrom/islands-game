@@ -9,7 +9,7 @@ extends Node2D
 
 @onready var player_unmount_location = $PlayerUnmountLocation
 
-var canInteract = true
+var canInteract = false
 
 @onready var cooldown = $Cooldown
 
@@ -21,6 +21,7 @@ func _process(delta):
 	pass
 
 func _on_mount_area_body_entered(body):
+	print("this")
 	if canInteract:
 		canInteract = false
 		if !player.is_inside_boat:
@@ -31,6 +32,7 @@ func _on_mount_area_body_entered(body):
 
 
 func _on_un_mount_area_body_entered(body):
+	print("this goran")
 	if canInteract:
 		canInteract = false
 		if player.is_inside_boat:
